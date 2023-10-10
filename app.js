@@ -20,8 +20,7 @@ function play(){
             guessArray.push(guess)
         }
         if (guess === number){
-            alert(`Great job, ${currentUser}! Out of ${guessArray.length} guess${guessArray.length > 1 ? 'es' : ''}, your guess of ${guess} was correct.`)
-            alert(`Guesses: ${JSON.stringify(guessArray)}`)
+            alert(`Great job, ${currentUser}! Out of ${guessArray.length} guess${guessArray.length > 1 ? 'es' : ''}, your guess of ${guess} was correct.`))
             checkHighScore();
             playAgain(currentUser)
         }
@@ -34,11 +33,11 @@ function play(){
         userList[currentUser] = guessArray.length;
     }
     // create internal playAgain function that prompts user
-    function playAgain (user) {
-        let input = prompt(`Would you like to play again ${user}? 'Y' or 'N'?`)
+    function playAgain() {
+        let input = prompt(`Would you like to play again ${currentUser}? 'Y' or 'N'?`)
         if (input === 'Y'){
             play();
-        } alert (`Thanks for playing ${user}!`) 
+        } alert (`Thanks for playing ${currentUser}!`) 
     }
     function checkHighScore (){
         for (let [key, value] of Object.entries(userList)) {
